@@ -14,18 +14,18 @@ touch $BASE_FOLDER/program_is_running
 
 # Music
 printf "Running on flac\n"
-./backup_script.sh ~/backup_scripts/drive_mountpoints/local/backups/ash_repo/ ~/backup_scripts/drive_mountpoints/remote/Music/flac/Gorillaz/Gorillaz
+./backup_script.sh $BASE_FOLDER/drive_mountpoints/local/backups/repo_flac/ $BASE_FOLDER/drive_mountpoints/remote/Music/flac
 
 
 # Videos
 printf "Running on videos\n"
-./backup_script.sh ~/backup_scripts/drive_mountpoints/local/backups/ash_repo/ ~/backup_scripts/drive_mountpoints/remote/Music/flac/Jay-Z/4-44
+./backup_script.sh $BASE_FOLDER/drive_mountpoints/local/backups/repo_videos/ $BASE_FOLDER/drive_mountpoints/remote/Videos
 
 
 # Samuel
 touch $BASE_FOLDER/program_is_running
 printf "Running on samuel\n"
-./backup_script.sh ~/backup_scripts/drive_mountpoints/local/backups/ash_repo/ ~/backup_scripts/drive_mountpoints/remote/Music/flac/Moby/18
+./backup_script.sh $BASE_FOLDER/drive_mountpoints/local/backups/repo_samuel/ $BASE_FOLDER/drive_mountpoints/remote/Samuel
 
 rm $BASE_FOLDER/program_is_running
 printf "Done\n"
