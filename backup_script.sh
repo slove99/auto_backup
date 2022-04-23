@@ -10,7 +10,7 @@ ARCHIVE_NAME=$(date '+%Y-%b-%d_%H-%M-%S')
 
 # Drive globals
 MOUNT_COMMAND_REMOTE="sudo mount -t cifs -o user=,password= //192.168.1.197/Public $BASE_FOLDER/drive_mountpoints/remote"
-MOUNT_COMMAND_LOCAL="sudo mount /dev/sda2 $BASE_FOLDER/drive_mountpoints/local"
+MOUNT_COMMAND_LOCAL="sudo mount -U "cbc567c3-a7be-4027-80ee-f316eb082a24" $BASE_FOLDER/drive_mountpoints/local"
 
 touch $LOG_FILE_PATH
 
@@ -69,7 +69,6 @@ fi
 
 
 REPO_FOLDER_NAME=$(realpath $1)
-
 
 # Extract backup folders from input args
 args_arr=( "$@" )
