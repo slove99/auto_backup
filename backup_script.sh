@@ -7,6 +7,7 @@
 LOG_FILE_PATH="/dev/null"
 BASE_FOLDER=~/backup_scripts
 ARCHIVE_NAME=$(date '+%Y-%b-%d_%H-%M-%S')
+LOG_FOLDER_NAME=$(date '+%Y_%b_%d')
 
 # Drive globals
 MOUNT_COMMAND_REMOTE="sudo mount -t cifs -o user=,password= //192.168.1.197/Public $BASE_FOLDER/drive_mountpoints/remote"
@@ -50,8 +51,8 @@ fi
 REPO_FOLDER_PATH=$( realpath $1 )
 REPO_FOLDER_NAME=$( basename $REPO_FOLDER_PATH )
 
-LOG_FILE_PATH="${BASE_FOLDER}/drive_mountpoints/local/logs/${REPO_FOLDER_NAME}_${ARCHIVE_NAME}.log"
-
+LOG_FILE_PATH="${BASE_FOLDER}/drive_mountpoints/local/logs/${LOG_FOLDER_NAME}/${REPO_FOLDER_NAME}_${ARCHIVE_NAME}.log"
+install -D /dev/null $LOG_FILE_PATH
 
 # Mount network hdd
 printf "Mounting remote drive\n"
